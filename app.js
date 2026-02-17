@@ -1,8 +1,22 @@
-// Exercise 1 - Read File
-const fs = require("fs");
+// Exercise 7 - Async/Await
+function waitForData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Data loaded successfully!");
+    }, 2000);
+  });
+}
 
-fs.readFile("file.txt", "utf8", function (err, data) {
-  if (err) throw err;
-  console.log("File contents:");
-  console.log(data);
-});
+async function myFunction() {
+  console.log("Starting...");
+
+  try {
+    const result = await waitForData();
+    console.log(result);
+    console.log("Done!");
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+myFunction();
