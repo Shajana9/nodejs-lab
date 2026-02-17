@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-lab",
+  "version": "1.0.0",
+  "description": "\"Node.js Lab Practice\"",
+  "main": "\"app.js\"",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shajana9/nodejs-lab.git"
+  },
+  "author": "shajana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shajana9/nodejs-lab/issues"
+  },
+  "homepage": "https://github.com/Shajana9/nodejs-lab#readme"
+}
