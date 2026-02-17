@@ -1,8 +1,13 @@
-// Exercise 1 - Read File
-const fs = require("fs");
+// Exercise 3 - Creating a Web Server
+const http = require("http");
 
-fs.readFile("file.txt", "utf8", function (err, data) {
-  if (err) throw err;
-  console.log("File contents:");
-  console.log(data);
-});
+http
+  .createServer(function (req, res) {
+    res.writeHead(200, { "Content-Type": "text/html" });
+    res.write("<h1>Hello World from Node.js Server!</h1>");
+    res.write("<p>My first web server!</p>");
+    res.end();
+  })
+  .listen(8080);
+
+console.log("Server is running on http://localhost:8080");
