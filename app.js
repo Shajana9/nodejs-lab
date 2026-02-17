@@ -1,8 +1,6 @@
-// Exercise 1 - Read File
-const fs = require("fs");
+// Exercise 5 - Using a Module
+const myModule = require("./my-module.js");
 
-fs.readFile("file.txt", "utf8", function (err, data) {
-  if (err) throw err;
-  console.log("File contents:");
-  console.log(data);
-});
+console.log(myModule.myFunction());
+console.log(myModule.addNumbers(5, 10));
+console.log(myModule.greetUser("John"));
