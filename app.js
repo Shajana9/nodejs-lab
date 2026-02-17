@@ -1,8 +1,23 @@
-// Exercise 1 - Read File
-const fs = require("fs");
+// Exercise 4 - Making an HTTP Request
+const https = require("https");
 
-fs.readFile("file.txt", "utf8", function (err, data) {
-  if (err) throw err;
-  console.log("File contents:");
-  console.log(data);
-});
+console.log("Fetching data from API...");
+
+https
+  .get("https://jsonplaceholder.typicode.com/posts/1", (resp) => {
+    let data = "";
+
+    // Collect data chunks
+    resp.on("data", (chunk) => {
+      data += chunk;
+    });
+
+    // When all data received
+    resp.on("end", () => {
+      console.log("Data received:");
+      console.log(JSON.parse(data));
+    });
+  })
+  .on("error", (err) => {
+    console.log("Error: " + err.message);
+  });
