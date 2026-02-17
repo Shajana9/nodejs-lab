@@ -1,8 +1,11 @@
-// Exercise 1 - Read File
+// Exercise 2 - Write to File
 const fs = require("fs");
 
-fs.readFile("file.txt", "utf8", function (err, data) {
-  if (err) throw err;
-  console.log("File contents:");
-  console.log(data);
-});
+fs.writeFile(
+  "file.txt",
+  "Hello World! This was written by Node.js!",
+  function (err) {
+    if (err) throw err;
+    console.log("File saved successfully!");
+  },
+);
