@@ -1,0 +1,4 @@
+Hello, this is my text file!
+This is line 2.
+This is line 3.
+Node.js can read this file!
