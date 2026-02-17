@@ -1,8 +1,29 @@
-// Exercise 1 - Read File
-const fs = require("fs");
+// Exercise 6 - Promises
+function checkNumber(number) {
+  const myPromise = new Promise((resolve, reject) => {
+    if (number > 0) {
+      resolve("Success! Number is positive: " + number);
+    } else {
+      reject("Failure! Number is not positive: " + number);
+    }
+  });
+  return myPromise;
+}
 
-fs.readFile("file.txt", "utf8", function (err, data) {
-  if (err) throw err;
-  console.log("File contents:");
-  console.log(data);
-});
+// Test with positive number
+checkNumber(10)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+// Test with negative number
+checkNumber(-5)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
